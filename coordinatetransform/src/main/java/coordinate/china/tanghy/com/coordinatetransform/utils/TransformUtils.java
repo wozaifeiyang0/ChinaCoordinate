@@ -109,7 +109,7 @@ public class TransformUtils {
      * GCJ-02 到 WGS-84 的转换（即 GPS 纠偏）
      * @param x 经度
      * @param y 纬度
-     * @return [0]纠偏后经度   [1]纠偏后纬度
+     * @return 坐标对象
      */
     public static Latlon Gcj02ToWgs84(double x , double y)
     {
