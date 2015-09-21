@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">新华社</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="url">http://lab.xinhua-news.cn/jiangsu/login.html</string>
+</resources>
