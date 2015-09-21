@@ -111,9 +111,9 @@ public class TransformUtils {
      * @param y 纬度
      * @return [0]纠偏后经度   [1]纠偏后纬度
      */
-    public static double[] Gcj02ToWgs84(double x , double y)
+    public static Latlon Gcj02ToWgs84(double x , double y)
     {
-        double[] res = new double[2];
+        Latlon point = null;
         try
         {
             double num = x * 3686400.0;
@@ -121,19 +121,20 @@ public class TransformUtils {
             double num3 = 0.0;
             double num4 = 0.0;
             double num5 = 0.0;
-            Latlon point = wgtochina_lb(1, (int) num, (int) num2, (int) num5, (int) num3, (int) num4);
+            point = wgtochina_lb(1, (int) num, (int) num2, (int) num5, (int) num3, (int) num4);
             double num6 = point.getLongitude();
             double num7 = point.getLatitude();
             num6 /= 3686400.0;
             num7 /= 3686400.0;
-            res[0] = num6;
-            res[1] = num7;
+
+            point.setLongitude(num6);
+            point.setLatitude(num7);
         }
         catch (Exception ex)
         {
             System.out.println(ex);
         }
-        return res;
+        return point;
     }
 
     private static void IniCasm(double w_time , double w_lng , double w_lat)
